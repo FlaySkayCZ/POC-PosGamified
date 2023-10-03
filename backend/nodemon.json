@@ -1,0 +1,13 @@
+{
+  "watch": [
+    "index.ts",
+    "nodemon.json",
+    "routes/*",
+    "models/*",
+    "config/*",
+    "api/*",
+    "src/*"
+  ],
+  "ext": "ts",
+  "exec": "npm run build && node build/src/index.js"
+}

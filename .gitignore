@@ -1,0 +1,57 @@
+# Node
+frontend/node_modules
+frontend/npm-debug.log
+frontend/yarn-error.log
+/.angular
+/frontend/.angular/cache
+backend/node_modules
+backend/npm-debug.log
+backend/yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# All databases
+*.db
+
+# System files
+.DS_Store
+Thumbs.db
+node_modules
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+**/output.txt
+=======
+/.angular/cache
+<<<<<<< HEAD
+>>>>>>> 38d8e65 (Remove cache)
+
+=======
+/frontend/.angular/cache
+>>>>>>> 0aa53e3 (Remove cache)
+=======
+**/output.txt
+=======
+/.angular/cache
+>>>>>>> 38d8e65 (Remove cache)
+
+>>>>>>> 80a68ad (Fix of .gitignore)
+# Backned Build
+build
+databases/*
+**/.pack
