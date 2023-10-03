@@ -1,0 +1,99 @@
+
+<div class="parent" #parent>
+    <mat-grid-list cols="5" rowHeight="1:1" class="person">
+      <mat-grid-tile>
+        <div class='internalMatGrid'>
+          <mat-grid-list cols="1" rowHeight="3:1">
+            <mat-grid-tile>
+              <h4 class="host-title">Host ID</h4>
+              <mat-form-field class="host-input">
+                <input type="number" matInput readonly value={{hostId}}>
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <h4 class="host-title">{{'surname' | translate}}</h4>
+              <mat-form-field class="host-input">
+                <input matInput placeholder="{{'fill' | translate}}" value={{surname}} [(ngModel)]="surname">
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <h4 class="host-title">{{'name' | translate}}</h4>
+              <mat-form-field class="host-input">
+                <input matInput placeholder="{{'fill' | translate}}" value={{name}} [(ngModel)]="name">
+              </mat-form-field>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class='internalMatGrid'>
+          <mat-grid-list cols="1" rowHeight="3:1">
+            <mat-grid-tile>
+              <h4 class="host-title">{{'reasone' | translate}}</h4>
+              <mat-form-field class="host-input">
+                <input matInput placeholder="{{'fill' | translate}}" value={{reasone}} [(ngModel)]="reasone">
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <h4 class="host-title">{{'birthDate' | translate}}</h4>
+                <input matInput placeholder="{{'fill' | translate}}" value={{birthDate}} [(ngModel)]="birthDate">
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+       
+              </mat-form-field>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class='internalMatGrid'>
+          <mat-grid-list cols="1" rowHeight="4:1">
+            <mat-grid-tile>
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              </mat-form-field>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class='internalMatGrid'>
+          <mat-grid-list cols="1" rowHeight="2:1">
+            <mat-grid-tile>
+              <mat-form-field class="host-input-date" appearance="fill">
+                
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-form-field class="host-input-date" appearance="fill">
+                
+              </mat-form-field>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class='internalMatGrid'>
+          <mat-grid-list cols="1" rowHeight="1:1">
+            <mat-grid-tile>
+    
+              </mat-form-field>
+            </mat-grid-tile>
+  
+          </mat-grid-list>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <br>
+  </div>
+  <div style="background-color:darkgrey; height: 36px; margin-top: -2px; padding-top: -4px;">
+    <button mat-raised-button (click)="submitHost()" class="button-save wide-background">{{'Save' | translate}}</button>
+  </div>

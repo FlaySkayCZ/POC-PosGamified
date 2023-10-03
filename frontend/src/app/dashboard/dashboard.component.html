@@ -1,0 +1,19 @@
+<mat-drawer-container class="container">
+    <mat-drawer-content>
+        <mat-tab-group>
+            <!-- <mat-tab label="{{ 'dashboard.overview' | translate }}">
+                <app-admin></app-admin>
+            </mat-tab> -->
+            <mat-tab label="{{ 'dashboard.users' | translate }}">
+                <app-user-edit></app-user-edit>
+            </mat-tab>
+            <mat-tab label="{{ 'dashboard.menu' | translate }}">
+                <app-menu-edit></app-menu-edit>
+            </mat-tab>
+            <mat-tab label="{{ 'dashboard.cashier' | translate }}">
+                <app-cashier></app-cashier>
+
+            </mat-tab>
+        </mat-tab-group>
+    </mat-drawer-content>
+</mat-drawer-container>

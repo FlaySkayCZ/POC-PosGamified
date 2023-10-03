@@ -55,11 +55,10 @@ function setTable(db: sqlite3.Database, name: string): void {
                         expense DOUBLE,
                         category TEXT,
                         user_id INTEGER NOT NULL,
-                        bill_id INTEGER ,
+                        bill_id INTEGER NOT NULL,
                         FOREIGN KEY (user_id) REFERENCES users(id),
                         FOREIGN KEY (bill_id) REFERENCES bills(id)
                         )`);
-                        //bill_id INTEGER NOT NULL - fixed in future
                     console.log('Table patrons created.');
                 } else {
                     console.log('Table patrons already exists.');

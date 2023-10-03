@@ -1,0 +1,10 @@
+.form-actions {
+    display: flex;
+    justify-content: center;
+  }
+  
+  button {
+    flex-grow: 1;
+    max-width: 300px; /* Optional, add a max width to prevent buttons from becoming too wide on larger screens */
+  }
+  

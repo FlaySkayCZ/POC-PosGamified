@@ -1,0 +1,157 @@
+<!-- <form [formControl]="_formControl"> -->
+  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="2px">
+    <div fxFlex="45" class="grid-item">
+      <div class="grid-item-content">
+        <div fxLayout="column" fxLayoutGap="2px">
+          <div fxFlex class="grid-item">
+            <div class="grid-item-content center">
+              <mat-form-field>
+                <h4 class="host-title">Host ID</h4>
+                <input type="number" matInput readonly value={{hostId}}>
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxFlex class="grid-item">
+            <div class="grid-item-content center">
+              <mat-form-field>
+                <h4 class="host-title">{{'surname' | translate}}</h4>
+                <input matInput placeholder="{{'fill' | translate }}" value={{surname}} [(ngModel)]="surname">
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxFlex class="grid-item">
+            <div class="grid-item-content center">
+              <mat-form-field>
+                <h4 class="host-title">{{'name' | translate}}</h4>
+                <input matInput placeholder="{{'fill' | translate }}" value={{name}} [(ngModel)]="name">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxFlex="45" class="grid-item">
+      <div class="grid-item-content">
+        <div fxLayout="column" fxLayoutGap="2px">
+          <div fxFlex class="grid-item">
+            <div class="grid-item-content center">
+              <mat-form-field>
+                <h4 class="host-title">{{'reason' | translate}}</h4>
+                <input matInput placeholder="{{'fill' | translate}}" value={{reason}} [(ngModel)]="reason">
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxFlex class="grid-item">
+            <div class="grid-item-content center">
+              <mat-form-field>
+                <h4 class="host-title">{{'birthDate' | translate}}</h4>
+                <input matInput placeholder="{{'fill' | translate}}" value={{birthDate}} [(ngModel)]="birthDate">
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxFlex class="grid-item">
+            <div class="grid-item-content center">
+              <mat-form-field>
+                <h4 class="host-title">{{'icn' | translate}}</h4>
+                <input matInput placeholder="{{'fill' | translate}}" value={{icn}} [(ngModel)]="icn">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxFlex="45" class="grid-item">
+      <div class="grid-item-content">
+        <div fxLayout="column" fxLayoutGap="2px">
+          <div fxFlex class="grid-item">
+            <div class="grid-item-content center">
+              <mat-form-field>
+                <h4 class="host-title">{{'residence' | translate}}</h4>
+                <input matInput placeholder="{{'fill' | translate}}" value={{residence}} [(ngModel)]="residence">
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxFlex class="grid-item">
+            <div class="grid-item-content center">
+              <mat-form-field>
+                <h4 class="host-title">{{'city' | translate}}</h4>
+                <input matInput placeholder="{{'fill' | translate}}" value={{city}} [(ngModel)]="city">
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxFlex class="grid-item">
+            <div class="grid-item-content center">
+              <mat-form-field>
+                <h4 class="host-title">{{'cityPart' | translate}}</h4>
+                <input matInput placeholder="{{'fill' | translate}}" value={{cityPart}} [(ngModel)]="cityPart">
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxFlex class="grid-item">
+            <div class="grid-item-content center">
+              <mat-form-field>
+                <h4 class="host-title">{{'street' | translate}}</h4>
+                <input matInput placeholder="{{'fill' | translate}}" value={{street}} [(ngModel)]="street">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxFlex="45" class="grid-item">
+      <div class="grid-item-content">
+        <div fxLayout="column" fxLayoutGap="2px">
+          <div fxFlex class="grid-item">
+            <div class="grid-item-content center">
+              <mat-form-field>
+                <mat-label>{{'arrivalDate' | translate}} </mat-label>
+                <input [min]="minDate" matInput [matDatepicker]="picker_arriv" [formControl]="date">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker_arriv">
+                  <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                </mat-datepicker-toggle>
+                <mat-datepicker #picker_arriv></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxFlex class="grid-item">
+            <div class="grid-item-content center">
+              <mat-form-field>
+                <mat-label>{{'departureDate' | translate}} </mat-label>
+                <input [min]="date.value" matInput [matDatepicker]="picker_dept" [(ngModel)]="departureDate">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker_dept">
+                  <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                </mat-datepicker-toggle>
+                <mat-datepicker #picker_dept></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxFlex="45" class="grid-item">
+      <div class="grid-item-content">
+        <div fxLayout="column" fxLayoutGap="2px">
+          <div fxFlex class="grid-item">
+            <div class="grid-item-content center">
+              <mat-form-field>
+                <h4 class="host-title">{{'Note' | translate}}</h4>
+                <input matInput placeholder="{{'fill' | translate}}" value={{Note}} [(ngModel)]="Note">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="configRow">
+    <div class="buttonsContainer">
+      <button mat-raised-button (click)="submitHost()" class="button-save">{{'Save' | translate}}</button>
+      <a href="" style="text-decoration: none; ">
+        <button mat-raised-button routeLing class="button-back">{{'Back' | translate}}
+        </button>
+      </a>
+    </div>
+  </div>
+<!-- </form> -->

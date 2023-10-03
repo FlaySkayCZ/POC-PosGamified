@@ -1,0 +1,125 @@
+<html><!-- List of users column -->
+<div class="users-column">
+  <h4 style="background-color: #E5E5E5; padding: 8px; border-radius: 5px; ">{{ 'Cashier' | translate}} <b> Joe </b> {{
+    'isLogged' | translate}}</h4>
+  <h3>Users</h3>
+  <div class="search-bar-container">
+    <mat-form-field class="search-bar">
+      <mat-label>{{ 'cashier.search' | translate}}</mat-label>
+      <input matInput #userSearch [formControl]="userSearchControl" (keyup)="searchUsers()"
+        [matAutocomplete]="autoUser">
+      <mat-autocomplete #autoUser="matAutocomplete" [displayWith]="displayUser">
+        <mat-option *ngFor="let user of filteredUsers" [value]="user" (onSelectionChange)="addBackendUser(user)">
+          {{ user.name }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <button class="add-blank-user" mat-icon-button (click)="addBlankUser()">
+      <span>{{'cashier.addBlankUsers' | translate}}</span> <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <div class="users-list">
+    <mat-list>
+      <mat-list-item *ngFor="let user of users" [class.selected]="user === selectedUser" (click)="selectUser(user)">
+        <span mat-line>{{user.name}}</span>
+        <button mat-icon-button *ngIf="user.type !== 'patron'" (click)="openChangeUserNameDialog(user)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>
+
+<!-- Selected user's tab and menu -->
+<div class="selected-user-column" *ngIf="selectedUser">
+  <div class="menu">
+    <div class="toolbar-menu">
+      <h3>{{ 'menu.title'| translate }}</h3>
+      <mat-form-field class="search-bar-menu">
+        <mat-label>{{ 'cashier.itemsSearch' | translate }}</mat-label>
+        <input matInput #itemSearch [formControl]="itemSearchControl" (keyup)="searchMenuItems()"
+          [matAutocomplete]="autoItem">
+        <mat-autocomplete #autoItem="matAutocomplete" [displayWith]="displayItem">
+          <mat-option *ngFor="let item of filteredItems" [value]="item" (onSelectionChange)="addItemToTab(item)">
+            {{ item.name }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+    <mat-tab-group disablePagination="false">
+      <mat-tab label="{{ 'all'| translate }}">
+        <div class="items">
+          <div *ngFor="let item of filterByCategory(items, 'All', currentPage, pageSize)" class="item">
+            <a (click)="addItemToTab(item)">
+              <span class="item-name">{{item.name}}</span>
+              <span class="item-price">{{item.price}}{{currency}}</span>
+            </a>            
+          </div>
+        </div>        
+        <div class="paginator">
+          <mat-paginator [length]="items.length" [pageSize]="pageSize" [pageIndex]="currentPage - 1"
+            (page)="currentPage = $event.pageIndex + 1"></mat-paginator>
+        </div>
+      </mat-tab>
+      
+      <mat-tab *ngFor="let category of categories" label="{{category.name}}">
+        <div class="items">
+          <ng-container *ngIf="category.items.length % 4 === 0; else unevenItems">
+            <div *ngFor="let item of filterByCategory(category.items, category.name, currentPage, pageSize)" class="item">
+              <span mat-line>{{item.name}}</span>
+              <span mat-line class="item-price">{{item.price}}{{currency}}</span>
+              <button mat-icon-button (click)="addItemToTab(item)">
+                <mat-icon>add_circle</mat-icon>
+              </button>
+            </div>
+          </ng-container>
+          <ng-template #unevenItems>
+            <div *ngFor="let item of filterByCategory(category.items.slice(0, category.items.length - category.items.length % 4), category.name, currentPage, pageSize)" class="item">
+              <span mat-line>{{item.name}}</span>
+              <span mat-line class="item-price">{{item.price}}{{currency}}</span>
+              <button mat-icon-button (click)="addItemToTab(item)">
+                <mat-icon>add_circle</mat-icon>
+              </button>
+            </div>
+          </ng-template>
+        </div>
+        <div class="paginator">
+          <mat-paginator [length]="category.items.length" [pageSize]="pageSize" [pageIndex]="currentPage - 1"
+            (page)="currentPage = $event.pageIndex + 1"></mat-paginator>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+    
+
+  </div>
+  <h3>{{selectedUser.name}}{{'sTab' | translate}}</h3>
+  <div class="tab item-container ">
+    <div class="items two">
+      <mat-list>
+        <mat-list-item *ngFor="let item of selectedUser.tab" class="item two">
+          <span mat-line>{{item.quantity}}x {{item.item.name}}</span>
+          <button mat-icon-button (click)="addItemToTab(item.item)">
+            <mat-icon>add_circle</mat-icon>
+          </button>
+          <button mat-icon-button (click)="removeItemFromTab(item.item)">
+            <mat-icon>remove_circle</mat-icon>
+          </button>
+          <span mat-line class="item-price">{{item.item.price * item.quantity}} {{currency}}</span>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+  <div class="subtotal">
+    <div class="subtotal-number">
+      <span>Subtotal:</span>
+      <span>{{calculateSubtotal()}}</span>
+      <span> {{currency}} </span>
+    </div>
+    <div class="subtotal-button">
+      <button mat-raised-button color="primary" (click)="issueBill()">{{ 'menu.issue'| translate }}</button>
+    </div>
+  </div>
+</div>
+
+</html>

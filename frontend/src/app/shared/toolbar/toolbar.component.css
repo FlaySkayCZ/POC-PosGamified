@@ -1,0 +1,32 @@
+@media (min-width: 600px) {
+    .toolbar {
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .left-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      
+      .middle-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+      }
+      
+      .right-container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+}

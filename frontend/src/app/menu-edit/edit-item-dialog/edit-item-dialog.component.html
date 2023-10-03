@@ -1,0 +1,50 @@
+<mat-card class="menu-edit-card">
+    <form [formGroup]="menuItemForm" (submit)="saveItem()" novalidate>
+        <mat-card-title>
+            {{ selectedMenuItem ? ('dialog.item.edit' | translate) : ('dialog.item.add' | translate) }}
+        </mat-card-title>
+        <mat-card-content>
+            <mat-form-field>
+                <input matInput formControlName="name" placeholder="{{'dialog.item.name' | translate}}">
+                <mat-error *ngIf="menuItemForm.controls['name'].invalid">{{'dialog.nameRequired' |
+                    translate}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <textarea matInput formControlName="description"
+                    placeholder="{{'dialog.item.description' | translate}}"></textarea>
+                <mat-error *ngIf="menuItemForm.controls['description'].invalid">{{'dialog.descriptionRequired' |
+                    translate}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput type="number" formControlName="price" placeholder="{{'dialog.item.price' | translate}}">
+                <mat-error *ngIf="menuItemForm.controls['price'].invalid">{{'dialog.priceRequired' |
+                    translate}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Category</mat-label>
+                <mat-select formControlName="category">
+                    <mat-option *ngFor="let category of categories" [value]="category.name">{{ category.name
+                        }}</mat-option>
+                    <mat-error *ngIf="menuItemForm.controls['category'].invalid">{{'dialog.categoryRequired' |
+                        translate}}</mat-error>
+                </mat-select>
+            </mat-form-field>
+
+            <div class=" form-actions">
+                <button mat-raised-button color="primary" type="submit">
+                    {{ selectedMenuItem ? translate.instant('dialog.item.save') :
+                    translate.instant('dialog.item.add') }}
+                </button>
+
+                <button mat-raised-button color="warn" type="button" (click)="onNoClick()">
+                    {{ selectedMenuItem ? translate.instant('Cancel') :
+                    translate.instant('dialog.item.reset') }}
+                </button>
+
+            </div>
+        </mat-card-content>
+    </form>
+</mat-card>

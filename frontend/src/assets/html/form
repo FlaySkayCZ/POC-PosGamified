@@ -1,0 +1,123 @@
+<mat-grid-list cols='5' rowHeight='1:1' class='person'>
+    <mat-grid-tile>
+      <div class='internalMatGrid'>
+        <mat-grid-list cols='1' rowHeight='3:1'>
+          <mat-grid-tile>
+            <h4 class='host-title'></h4>
+            <mat-form-field class='host-input'>
+              <input type='number' matInput readonly value={{hostId}}>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <h4 class='host-title'>{{'surname' | translate}}</h4>
+            <mat-form-field class='host-input'>
+              <input matInput placeholder='Please fill' value=''>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <h4 class='host-title'>{{'name' | translate}}</h4>
+            <mat-form-field class='host-input'>
+              <input matInput placeholder='Please fill' value=''>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class='internalMatGrid'>
+        <mat-grid-list cols='1' rowHeight='3:1'>
+          <mat-grid-tile>
+            <h4 class='host-title'>{{'reasone' | translate}}</h4>
+            <mat-form-field class='host-input'>
+              <input matInput placeholder='Please fill' value=''>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <h4 class='host-title'>{{'birthDate' | translate}}</h4>
+            <mat-form-field class='host-input'>
+              <input matInput placeholder='Please fill' value=''>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <h4 class='host-title'>{{'icn' | translate}}</h4>
+            <mat-form-field class='host-input'>
+              <input matInput placeholder='Please fill' value=''>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class='internalMatGrid'>
+        <mat-grid-list cols='1' rowHeight='4:1'>
+          <mat-grid-tile>
+            <h4 class='host-title'>{{'residence' | translate}}</h4>
+            <mat-form-field class='host-input'>
+              <input matInput placeholder='Please fill' value=''>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <h4 class='host-title'>{{'city' | translate}}</h4>
+            <mat-form-field class='host-input'>
+              <input matInput placeholder='Please fill' value=''>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <h4 class='host-title'>{{'cityPart' | translate}}</h4>
+            <mat-form-field class='host-input'>
+              <input matInput placeholder='Please fill' value=''>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <h4 class='host-title'>{{'street' | translate}}</h4>
+            <mat-form-field class='host-input'>
+              <input matInput placeholder='Please fill' value=''>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class='internalMatGrid'>
+        <mat-grid-list cols='1' rowHeight='2:1'>
+          <mat-grid-tile>
+            <mat-form-field class='host-input-date' appearance='fill'>
+              <mat-label>{{'arrivalDate' | translate}} </mat-label>
+              <input [min]='minDate' matInput [matDatepicker]='picker_arriv' [formControl]='date'>
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matIconSuffix [for]='picker_arriv'>
+                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker_arriv></mat-datepicker>
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-form-field class='host-input-date' appearance='fill'>
+              <mat-label>{{'departureDate' | translate}} </mat-label>
+              <input [min]='date.value' matInput [matDatepicker]='picker_dept'>
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matIconSuffix [for]='picker_dept'>
+                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker_dept></mat-datepicker>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class='internalMatGrid'>
+        <mat-grid-list cols='1' rowHeight='1:1'>
+          <mat-grid-tile>
+            <h4 class='host-title'>{{'Note' | translate}}</h4>
+            <mat-form-field class='host-input'>
+              <textarea matInput></textarea>
+            </mat-form-field>
+          </mat-grid-tile>
+
+        </mat-grid-list>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <br>

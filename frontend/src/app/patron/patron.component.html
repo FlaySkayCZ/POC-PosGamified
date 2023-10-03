@@ -1,0 +1,67 @@
+<mat-card>
+    <mat-card-title>{{ user.name }}</mat-card-title>
+    <mat-card-subtitle>Level {{ user.level }} ({{ user.experience }} XP)</mat-card-subtitle>
+    <mat-progress-bar mode="determinate" [value]="user.progress"></mat-progress-bar>
+</mat-card>
+<div class="body">
+    <div class="filters">
+        <mat-form-field appearance="fill">
+            <mat-label>Month</mat-label>
+            <mat-select [(ngModel)]="selectedMonth">
+                <mat-option *ngFor="let month of months" [value]="month">{{month}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Select Year</mat-label>
+            <mat-select [(value)]="selectedYear">
+                <mat-option *ngFor="let year of years" [value]="year">{{ year }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button (click)="filterData()">Filter</button>
+    </div>
+    <mat-card class="summary">
+        <mat-card-content>
+            <div class="summary-item">
+                <div class="label">Total Spendings</div>
+                <div class="value">{{totalSpendings}}</div>
+            </div>
+            <div class="summary-item">
+                <div class="label">Total XP</div>
+                <div class="value">{{totalXP}}</div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <div class="chart">
+        <h3>{{selectedMonth}} Spendings</h3>
+        <ngx-charts-bar-vertical
+          [view]="[800, 500]"
+          [scheme]="colorScheme"
+          [results]="currentMonthData"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="showLegend"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel">
+        </ngx-charts-bar-vertical>
+      </div>
+      
+      <div class="chart">
+        <h3>{{selectedYear}} Spendings</h3>
+        <ngx-charts-bar-vertical
+          [view]="[800, 500]"
+          [scheme]="colorScheme"
+          [results]="currentYearData"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="showLegend"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel">
+        </ngx-charts-bar-vertical>
+      </div>
+</div>

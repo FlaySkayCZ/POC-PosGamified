@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>{{ 'dialog.changeName' | translate }}</h2>
+<mat-dialog-content>
+    <p>{{ 'dialog.newName' | translate }}:</p>
+    <mat-form-field>
+        <input matInput [(ngModel)]="name">
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="name" cdkFocusInitial>{{ 'Save' | translate }}</button>
+    <button mat-button (click)="onCancelClick()">{{ 'Cancel' | translate }}</button>
+</mat-dialog-actions>

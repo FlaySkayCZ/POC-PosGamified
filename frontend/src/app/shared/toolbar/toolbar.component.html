@@ -1,0 +1,28 @@
+<mat-toolbar color="primary" class="toolbar">
+  <div class="toolbar__left">
+    <button mat-icon-button [matMenuTriggerFor]="langMenu" class="language-btn">
+      <mat-icon>language</mat-icon>
+      <span>{{ selectedLanguage.viewValue }}</span>
+    </button>
+    <mat-menu #langMenu="matMenu" [overlapTrigger]="false" matMenuPosition="below right">
+      <mat-list>
+        <mat-list-item *ngFor="let lang of languages" (click)="selectLang(lang)">
+          <mat-icon>{{ lang.icon }}</mat-icon>
+          <span>{{ lang.viewValue }}</span>
+        </mat-list-item>
+      </mat-list>
+    </mat-menu>
+  </div>
+
+  <div class="toolbar__middle">
+    <button mat-raised-button color="primary" class="toolbar__button toolbar__logout-btn"
+    (click)="toMenu()">REDPOINT</button>
+  </div>
+
+  <div class="toolbar__right">
+    <button mat-raised-button color="warn" class="toolbar__button toolbar__logout-btn" (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      <span>{{'Logout' | translate}}</span>
+    </button>
+  </div>
+</mat-toolbar>

@@ -1,0 +1,52 @@
+/* styles.scss
+$black: #000;
+$white: #fff;
+$red: #f44336; */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: min-content;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.left-panel {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.right-panel {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.hotel-host-link {
+    margin-top: 20px;
+}
+
+.button {
+    margin: 5px;
+}

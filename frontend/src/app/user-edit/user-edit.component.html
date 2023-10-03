@@ -1,0 +1,57 @@
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>E-mail</th>
+      <th>Username</th>
+      <th>Role</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let userForm of userForms; let i = index">
+      <tr [formGroup]="userForm">
+        <td>
+          <mat-label>ID</mat-label>
+          <input matInput value="{{ userForm.controls['id'].value }}" type="number" disabled>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput value="{{userForm.controls['email'].value}}" type="email" disabled>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label>Role</mat-label>
+            <mat-select formControlName="role">
+              <mat-option value="admin">Admin</mat-option>
+              <mat-option value="patron">Patron</mat-option>
+              <mat-option value="cashier">Cashier</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+        <td>
+          <button mat-raised-button color="primary" (click)="onSave(i)" matTooltip="Save Changes"
+            matTooltipPosition="below">
+            <mat-icon aria-label="save">save</mat-icon>
+          </button>
+          <button mat-raised-button color="warn" (click)="onDelete(i)" matTooltip="Delete User"
+            matTooltipPosition="below">
+            <mat-icon aria-label="Delete">delete</mat-icon>
+          </button>
+        </td>
+      </tr>
+      <tr class="spacer"></tr>
+    </ng-container>
+    <tr *ngIf="!userForms.length">
+      <td colspan="4">No users found.</td>
+    </tr>
+  </tbody>
+</table>

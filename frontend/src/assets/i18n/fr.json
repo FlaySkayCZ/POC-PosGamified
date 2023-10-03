@@ -1,0 +1,130 @@
+{
+    "SiteTitle": "Mon Site Web",
+    "WelcomeMessage": "Bienvenue sur mon site web",
+    "idNumber": "Numéro d'identification",
+    "surname": "Nom de famille",
+    "name": "Prénom",
+    "reasone": "Motif de séjour",
+    "birthDate": "Date de naissance",
+    "icn": "Numéro de carte d'identité",
+    "residence": "Pays de résidence permanent",
+    "city": "Ville",
+    "cityPart": "Quartier",
+    "street": "Rue et numéro de maison",
+    "arrivalDate": "Date d'arrivée",
+    "departureDate": "Date de départ",
+    "Note": "Remarque",
+    "Save": "Enregistrer",
+    "Cancel": "Annuler",
+    "Language": "Langue",
+    "fill": "Veuillez remplir le champ",
+    "or": "ou",
+    "visiting": " Client d'hôtel ? Cliquez ici !",
+    "submit": "Soumettre",
+    "cashier": "Caisse",
+    "Cashier": "Caisse",
+    "cashier.blankUser": "Client",
+    "cashier.addBlankUsers": "Ajouter un client",
+    "isLogged": "est connecté",
+    "cashier.search": "Rechercher un client",
+    "cashier.itemsSearch": "Rechercher des éléments de menu par nom",
+    "yes": "Oui",
+    "no": "Non",
+    "Logout": "Déconnexion",
+    "login": {
+        "term": "Se connecter",
+        "title": "Connexion",
+        "login": "Se connecter",
+        "email": "Adresse e-mail de l'utilisateur",
+        "password": "Mot de passe",
+        "register": "S'inscrire",
+        "email-required": "L'adresse e-mail est obligatoire",
+        "email-invalid": "L'adresse e-mail n'est pas valide",
+        "password-required": "Le mot de passe est obligatoire"
+    },
+    "landing.register": "S'inscrire",
+    "register": {
+        "title": "Inscription",
+        "registered": "Déjà inscrit ? Se connecter",
+        "createAccount": "Créer un compte"
+    },
+    "password": {
+        "title": "Mot de passe",
+        "password-required": "Le mot de passe est obligatoire",
+        "password-minlength": "Le mot de passe doit comporter au moins 6 caractères"
+    },
+    "email": {
+        "title": "E-mail",
+        "email-required": "L'adresse e-mail est obligatoire",
+        "email-invalid": "L'adresse e-mail n'est pas valide"
+    },
+    "username": {
+        "title": "Nom d'utilisateur",
+        "username-required": "Le nom d'utilisateur est obligatoire",
+        "username-minlength": "Le nom d'utilisateur doit comporter au moins 4 caractères",
+        "username-invalid": "Le nom d'utilisateur doit contenir uniquement des lettres et des chiffres"
+    },
+    "dashboard": {
+        "overview": "Vue d'ensemble",
+        "users": "Utilisateurs",
+        "menu": "Menu",
+        "cashier": "Caisse"
+    },
+    "menu": {
+        "title": "Menu",
+        "issue": "Fermer le compte",
+        "tooltip.addItem": "Ajouter un nouvel élément",
+        "addItem": "Ajouter un nouvel él"
+    },
+    "dashboard": {
+        "overview": "Aperçu",
+        "users": "Utilisateurs",
+        "menu": "Menu",
+        "cashier": "Caissier"
+    },
+    "menu": {
+        "title": "Menu",
+        "issue": "Fermer le compte",
+        "tooltip.addItem": "Ajouter un nouvel élément",
+        "addItem": "Ajouter un nouvel élément",
+        "tooltip.addCategory": "Créer une nouvelle catégorie",
+        "addCategory": "Créer une nouvelle catégorie",
+        "name": "Nom de l'élément",
+        "description": "Description de l'élément",
+        "price": "Prix de l'élément",
+        "category": "Catégorie de l'élément",
+        "actions": "Actions",
+        "actions.edit": "Modifier l'élément",
+        "actions.delete": "Supprimer l'élément",
+        "confirmation": "Êtes-vous sûr de vouloir supprimer l'élément "
+    },
+    "dialog": {
+        "changeName": "Changer le nom de l'invité",
+        "newName": "Nouveau nom d'invité",
+        "newCategory": "Nouvelle catégorie",
+        "categoryName": "Nom de la catégorie",
+        "item.edit": "Modifier l'élément",
+        "item.add": "Ajouter l'élément",
+        "item.delete": "Supprimer l'élément",
+        "item.reset": "Réinitialiser",
+        "item.save": "Enregistrer",
+        "item.name": "Nom de l'élément",
+        "item.price": "Prix de l'élément",
+        "item.description": "Description de l'élément",
+        "nameRequired": "Le nom de l'élément est requis",
+        "descriptionRequired": "La description de l'élément est requise",
+        "priceRequired": "Le prix de l'élément est requis",
+        "categoryRequired": "La catégorie de l'élément est requise"
+    },
+    "patron": {
+        "USER_NAME": "Nom d'utilisateur",
+        "LEVEL": "Niveau",
+        "XP": "XP",
+        "SPENDING_BY_MONTH": "Dépenses par mois",
+        "SPENDING_BY_YEAR": "Dépenses par an",
+        "SELECT_MONTH": "Sélectionner le mois",
+        "SELECT_YEAR": "Sélectionner l'année"
+    },
+    "all": "Tous",
+    "sTab": ""
+}

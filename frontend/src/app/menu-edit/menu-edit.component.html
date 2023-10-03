@@ -1,0 +1,77 @@
+<div class="menu-edit-container">
+    <mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="col1">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let row">
+                <button class="wide-button" color="primary" mat-raised-button (click)="openItemDialog(null)"
+                matTooltip="{{ 'menu.tooltip.addItem' | translate }}"
+                matTooltipPosition="below">
+                    <mat-icon>add</mat-icon>
+                    {{ 'menu.addItem' | translate }}
+                </button>
+            </mat-cell>
+        </ng-container>
+        
+        <ng-container matColumnDef="col2">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let row">
+                <button class="wide-button" color="primary" mat-raised-button (click)="openAddCategoryDialog()"
+                matTooltip="{{ 'menu.tooltip.addCategory' | translate }}"
+            matTooltipPosition="below">
+                    <mat-icon>add</mat-icon>
+                    {{ 'menu.addCategory' | translate }}
+                </button>
+            </mat-cell>
+        </ng-container>        
+             
+        <mat-header-row style="display: none;" *matHeaderRowDef="[]"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: ['col1', 'col2']"></mat-row>
+      </mat-table>
+      
+
+
+    <mat-table [dataSource]="items">
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> {{ 'menu.name' | translate }} </mat-header-cell>
+            <mat-cell *matCellDef="let menuItem"> {{ menuItem.name }} </mat-cell>
+        </ng-container>
+
+        <!-- Description Column -->
+        <ng-container matColumnDef="description">
+            <mat-header-cell *matHeaderCellDef> {{ 'menu.description' | translate }} </mat-header-cell>
+            <mat-cell *matCellDef="let menuItem"> {{ menuItem.description }} </mat-cell>
+        </ng-container>
+
+        <!-- Price Column -->
+        <ng-container matColumnDef="price">
+            <mat-header-cell *matHeaderCellDef> {{ 'menu.price' | translate }} </mat-header-cell>
+            <mat-cell *matCellDef="let menuItem"> {{ menuItem.price | currency:'Czk ' }} </mat-cell>
+        </ng-container>
+
+        <!-- Category Column -->
+        <ng-container matColumnDef="category">
+            <mat-header-cell *matHeaderCellDef> {{ 'menu.category' | translate }}
+
+            </mat-header-cell>
+            <mat-cell *matCellDef="let menuItem"> {{ menuItem.category }} </mat-cell>
+        </ng-container>
+
+        <!-- Action Column -->
+        <ng-container matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef> {{ 'menu.actions' | translate }} </mat-header-cell>
+            <mat-cell *matCellDef="let menuItem">
+                <button mat-icon-button (click)="openItemDialog(menuItem)"matTooltip="{{ 'menu.actions.edit' | translate }}"
+                matTooltipPosition="below">
+                    <mat-icon aria-label="Edit">edit</mat-icon>
+                </button>
+                <button mat-icon-button (click)="deleteMenuItemPrompt(menuItem)"matTooltip="{{ 'menu.actions.delete' | translate }}"
+                matTooltipPosition="below">
+                    <mat-icon aria-label="Delete">delete</mat-icon>
+                </button>
+            </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>

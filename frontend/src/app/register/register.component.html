@@ -1,0 +1,64 @@
+<div class="mat-elevation-z8 register-card">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{ 'register.title' | translate }}</mat-card-title>
+        </mat-card-header>
+
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <mat-card-content>
+                <mat-form-field appearance="outline" class="container">
+                    <mat-label>{{ 'username.title' | translate }}</mat-label>
+                    <input matInput formControlName="username" required>
+                    <mat-error
+                        *ngIf="registerForm.get('username')?.invalid && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched)">
+                        <span *ngIf="registerForm.get('username')?.errors?.['required']">{{ 'username.username-required'
+                            |
+                            translate }}</span>
+                        <span *ngIf="registerForm.get('username')?.errors?.['minlength']">{{
+                            'username.username-minlength' |
+                            translate }}</span>
+                        <span *ngIf="registerForm.get('username')?.errors?.['username']">{{ 'username.username-invalid'
+                            |
+                            translate }}</span>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="container">
+                    <mat-label>{{ 'email.title' | translate }}</mat-label>
+                    <input matInput formControlName="email" required>
+                    <mat-error
+                        *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)">
+                        <span *ngIf="registerForm.get('email')?.errors?.['required']">{{ 'email.email-required' |
+                            translate
+                            }}</span>
+                        <span *ngIf="registerForm.get('email')?.errors?.['email']">{{ 'email.email-invalid' |
+                            translate
+                            }}</span>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="container">
+                    <mat-label>{{ 'password.title' | translate }}</mat-label>
+                    <input matInput formControlName="password" required type="password" >
+                    <mat-error
+                        *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)">
+                        <span *ngIf="registerForm.get('password')?.errors?.['required']">{{ 'password.password-required'
+                            |
+                            translate
+                            }}</span>
+                        <span *ngIf="registerForm.get('password')?.errors?.['minlength']">{{
+                            'password.password-minlength' |
+                            translate }}</span>
+                    </mat-error>
+                </mat-form-field>
+
+            </mat-card-content>
+        </form>
+        <div class="container">
+            <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!registerForm.valid">{{
+                'register.createAccount' | translate }} </button>
+            <button mat-raised-button color="primary" (click)="routeRegistered()">{{ 'register.registered' | translate
+                }}</button>
+        </div>
+    </mat-card>
+</div>

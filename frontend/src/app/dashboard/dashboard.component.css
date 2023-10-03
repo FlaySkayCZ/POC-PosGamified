@@ -1,0 +1,18 @@
+.container {
+    height: 100%;
+}
+
+@media screen and (max-width: 900px) {
+    .mat-drawer-content {
+        display: none;
+    }
+
+
+}
+
+@media screen and (min-width: 900px) {
+    .menu-button {
+        display: none;
+    }
+    
+}
